@@ -241,9 +241,9 @@ def main():
         return
 
     book = epub.EpubBook()
-    today = date.today().isoformat()
+    today = date.today().strftime("%d/%m/%Y")
     book.set_identifier(str(uuid.uuid4()))
-    book.set_title(f"Reading Digest {today}")
+    book.set_title(f"RSS Reads {today}")
     book.set_language("en")
     book.add_author("rss2kindle")
     css = epub.EpubItem(uid="style", file_name="style/style.css", media_type="text/css",
@@ -271,7 +271,7 @@ def main():
         print("DRY_RUN: wrote digest.epub, no email sent, seen.json unchanged.")
         return
 
-    send_email(data, f"Reading Digest {today}.epub")
+    send_email(data, f"RSS Reads {today}.epub")
     save_seen(seen_list + to_mark)  # only after the email succeeds
     print("Sent.")
 
