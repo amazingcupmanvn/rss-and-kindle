@@ -241,7 +241,7 @@ def main():
         return
 
     book = epub.EpubBook()
-    today = date.today().strftime("%d/%m/%Y")
+    today = date.today().strftime("%d-%m-%Y")
     book.set_identifier(str(uuid.uuid4()))
     book.set_title(f"RSS Reads {today}")
     book.set_language("en")
