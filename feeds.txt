@@ -1,3 +1,5 @@
 # One feed URL per line. Lines starting with # are ignored.
 # Replace the examples below with your own feeds.
-https://www.wired.com/feed/tag/ai/latest/rss
+https://https://rsshub.app/leetcode/articles
+https://rsshub.app/leetcode/dailyquestion/en
+https://https://rsshub.app/leetcode/dailyquestion/solution/en
