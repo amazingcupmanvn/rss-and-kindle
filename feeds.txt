@@ -1,6 +1,11 @@
 # One feed URL per line. Lines starting with # are ignored.
 # Replace the examples below with your own feeds.
 https://feeds.feedburner.com/zenhabits
+https://fs.blog/feed
+https://themarginalian.org/feed
 https://www.poetryfoundation.org/rss/poemoftheday
-https://feeds.feedburner.com/TodayIFoundOut
+https://www.askamathematician.com/feed
+https://api.quantamagazine.org/feed/
+https://newsletter.systemdesign.one/feed
 https://blog.bytebytego.com/feed
+
