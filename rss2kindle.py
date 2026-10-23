@@ -3,8 +3,11 @@
 
 Config (environment variables):
   KINDLE_EMAIL        your Kindle's @kindle.com address
-  GMAIL_ADDRESS       Gmail account used to send (must be on Amazon's approved list)
-  GMAIL_APP_PASSWORD  Gmail app password (not your normal password)
+  GMAIL_ADDRESS       email address used to send (must be on Amazon's approved list);
+                      despite the name, any provider works
+  GMAIL_APP_PASSWORD  that account's app password (not your normal password)
+  SMTP_HOST           optional; defaults to smtp.gmail.com (Yahoo: smtp.mail.yahoo.com)
+  SMTP_PORT           optional; defaults to 465 (SSL)
   MAX_PER_FEED        newest unseen articles to take per feed (default 5)
   MAX_ARTICLES        cap on articles per digest (default 20)
   DRY_RUN=1           write digest.epub locally; don't email or update seen.json
@@ -202,7 +205,9 @@ def send_email(epub_bytes, filename):
     msg["Subject"] = filename
     msg.set_content("Your reading digest is attached.")
     msg.add_attachment(epub_bytes, maintype="application", subtype="epub+zip", filename=filename)
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=60) as smtp:
+    host = os.environ.get("SMTP_HOST") or "smtp.gmail.com"
+    port = int(os.environ.get("SMTP_PORT") or 465)
+    with smtplib.SMTP_SSL(host, port, timeout=60) as smtp:
         smtp.login(sender, password)
         smtp.send_message(msg)
 
