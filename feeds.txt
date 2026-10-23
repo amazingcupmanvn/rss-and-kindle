@@ -1,0 +1,4 @@
+# One feed URL per line. Lines starting with # are ignored.
+# Replace the examples below with your own feeds.
+https://example.com/feed.xml
+https://example.substack.com/feed
