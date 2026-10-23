@@ -1,5 +1,6 @@
 # One feed URL per line. Lines starting with # are ignored.
 # Replace the examples below with your own feeds.
-https://rsshub.rss3.workers.dev/leetcode/articles
-https://rsshub.rss3.workers.dev/leetcode/dailyquestion/en
-https://rsshub.rss3.workers.dev/leetcode/dailyquestion/solution/en
+https://feeds.feedburner.com/zenhabits
+https://www.poetryfoundation.org/rss/poemoftheday
+https://feeds.feedburner.com/TodayIFoundOut
+https://blog.bytebytego.com/feed

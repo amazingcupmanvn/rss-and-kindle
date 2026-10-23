@@ -37,8 +37,8 @@ ROOT = Path(__file__).parent
 FEEDS_FILE = ROOT / "feeds.txt"
 SEEN_FILE = ROOT / "seen.json"
 
-MAX_PER_FEED = int(os.environ.get("MAX_PER_FEED", "5"))
-MAX_ARTICLES = int(os.environ.get("MAX_ARTICLES", "20"))
+MAX_PER_FEED = int(os.environ.get("MAX_PER_FEED", "3"))
+MAX_ARTICLES = int(os.environ.get("MAX_ARTICLES", "15"))
 DRY_RUN = os.environ.get("DRY_RUN") == "1"
 
 IMAGE_BUDGET_BYTES = 12 * 1024 * 1024  # total images per digest
