@@ -163,8 +163,17 @@ def embed_images(soup, base_url, book, article_no, budget):
 
 def make_chapter(article, feed_title, article_no, book, css, budget):
     soup = BeautifulSoup(article["content"], "lxml")
+
     for tag in soup(["script", "style", "iframe", "form", "noscript", "svg", "video", "audio"]):
         tag.decompose()
+
+    # Remove hyperlinks entirely; preserve visible text or images
+    for a in list(soup.find_all("a")):
+        if a.find("img"):
+            a.replace_with(a.find("img"))
+        else:
+            a.unwrap()
+
     embed_images(soup, article["base_url"], book, article_no, budget)
     body = soup.body.decode_contents() if soup.body else str(soup)
 
